@@ -8,7 +8,7 @@
 
 import random
 
-def game_strategy(total_sweets, max):
+def input_bot(total_sweets, max):
     cicle_sweets = max + 1
     if (total_sweets % cicle_sweets) != 0:
         return total_sweets % cicle_sweets
@@ -31,16 +31,16 @@ print('Всего конфет: ', count_sweets)
 while count_sweets > 0:
     if first_move == 1:
         count_sweets -= input_gamer(max_sweets)
-        win = 0
+        win = True
     else:
-        take_sweets = game_strategy(count_sweets, max_sweets)
+        take_sweets = input_bot(count_sweets, max_sweets)
         count_sweets -= take_sweets
         print('Игрок 2 взял: ', take_sweets)
-        win = 1
+        win = False
     first_move *= -1
     print('Осталось', count_sweets, 'конфет')
 
-if win == 0:
+if win:
     print('Ты победил !!!')
 else:
     print('Победил игрок 2 !!!')
