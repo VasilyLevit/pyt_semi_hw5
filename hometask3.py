@@ -12,7 +12,7 @@ def draw_board(board):
         print(board[0+i*3], "|", board[1+i*3], "|", board[2+i*3])
         print("-" * 9)
 
-def in_simbol(player_token):
+def in_simbol(player_token): # ввод символов
    valid = False
    while not valid:
       player_answer = input("Куда поставим " + player_token + "? ")
@@ -28,7 +28,7 @@ def in_simbol(player_token):
          else:
             print("занято!")
       else:
-        print("Введите число от 1 до 9.")
+        print("Введите число от 1 до 9")
 
 print('\n', 'Крестики-нолики', '\n')
 board = list(range(1,10))
